@@ -13,7 +13,7 @@ mongoose.connect(
       useFindAndModify: false,
    },
    () => {
-      console.log("MongoDB Connected!");
+      console.log("[3] MongoDB Connected!");
    }
 );
 
@@ -26,5 +26,5 @@ app.get("/", (req, res) => {
 
 app.listen(port, () => {
    console.log("[1] Backend is running!!");
-   console.log(`Server running on ${port}, http://localhost:${port}`);
+   console.log(`[2] Server running on ${port}, http://localhost:${port}`);
 });
