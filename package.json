@@ -2,13 +2,13 @@
 	"name": "mern-app",
 	"version": "1.0.0",
 	"description": "",
-	"main": "server.js",
+	"main": "index.js",
 	"engines": {
 		"node": "14.x"
 	},
 	"scripts": {
-		"start": "node run server.js",
-		"dev": "nodemon server.js"
+		"start": "node run index.js",
+		"dev": "nodemon index.js"
 	},
 	"author": "",
 	"license": "ISC",
