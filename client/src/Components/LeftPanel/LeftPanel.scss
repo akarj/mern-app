@@ -1,0 +1,15 @@
+div.Left-Panel-Container {
+  section {
+    place-content: center;
+    place-items: center;
+
+    header {
+      font-size: 5rem;
+      font-weight: 500;
+      text-align: center;
+      line-height: 6rem;
+      text-transform: uppercase;
+      transform: translateY(40%);
+    }
+  }
+}

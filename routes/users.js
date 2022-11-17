@@ -1,3 +1,4 @@
+const { response } = require("express");
 const User = require("../models/User");
 const router = require("express").Router();
 
@@ -12,7 +13,7 @@ router.post("/", async (req, res) => {
    }
 });
 
-// //update a user
+//update a user
 router.put("/:id", async (req, res) => {
    try {
       const user = await User.findById(req.params.id);
@@ -27,26 +28,31 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
    try {
       const user = await User.findById(req.params.id);
-      if (user.userId === req.body.userId) {
-         await user.deleteOne();
-         res.status(200).json("the user has been deleted");
-      } else {
-         res.status(403).json("you can delete only your user");
-      }
+      await user.deleteOne();
+      res.status(200).json("the user has been deleted");
+
    } catch (err) {
       res.status(500).json(err);
    }
 });
 
 
-//get a user
-router.get("/:id", async (req, res) => {
+//get all user
+router.get("/", async (req, res) => {
+
+   // res.send(`Welcome to users...`);
    try {
-      const user = await User.findById(req.params.id);
-      res.status(200).json(user);
+      const data = await User.find();
+
+      return res.json(data)
+
+      // debugger;
+      // res.status(200).json(user);
    } catch (err) {
       res.status(500).json(err);
    }
+   // res.send(`Welcome to users...`);
+
 });
 
 
