@@ -1,0 +1,17 @@
+.App-container {
+  text-align: center;
+  position: relative;
+
+  div.bottomSection {
+    color: #fefefe;
+    display: flex;
+    div.leftSection {
+      align-items: center;
+      place-content: center;
+      flex: 4;
+    }
+    div.rightSection {
+      flex: 6;
+    }
+  }
+}
